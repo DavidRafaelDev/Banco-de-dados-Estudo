@@ -43,5 +43,9 @@ insert into editora values 	(null,'editora abril','2000-07-22'),
 							(null,'Globo','2003-10-25'),
                             (null,'Editora Três','1997-10-20');
 
-                            
-     
+
+
+alter table revista add fkEditora int, add foreign key(fkEditora) references editora(idEditora);
+desc revista;
+update revista set fkEditora = 1001 where idRevista in (1,2,3);
+update revista set fkEditora = 1002 where idRevista in (2,3,4);
